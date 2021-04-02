@@ -16,7 +16,6 @@
 		E80393762617332700DD3570 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80393752617332700DD3570 /* Utility.swift */; };
 		E862AB282615EA0B003F2424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862AB272615EA0B003F2424 /* AppDelegate.swift */; };
 		E862AB2A2615EA0B003F2424 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862AB292615EA0B003F2424 /* SceneDelegate.swift */; };
-		E862AB2C2615EA0B003F2424 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862AB2B2615EA0B003F2424 /* ViewController.swift */; };
 		E862AB2F2615EA0B003F2424 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E862AB2D2615EA0B003F2424 /* Main.storyboard */; };
 		E862AB322615EA0B003F2424 /* MudBot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E862AB302615EA0B003F2424 /* MudBot.xcdatamodeld */; };
 		E862AB342615EA0E003F2424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E862AB332615EA0E003F2424 /* Assets.xcassets */; };
@@ -36,7 +35,6 @@
 		E862AB242615EA0B003F2424 /* MudBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MudBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E862AB272615EA0B003F2424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E862AB292615EA0B003F2424 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E862AB2B2615EA0B003F2424 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E862AB2E2615EA0B003F2424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E862AB312615EA0B003F2424 /* MudBot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MudBot.xcdatamodel; sourceTree = "<group>"; };
 		E862AB332615EA0E003F2424 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			children = (
 				E862AB272615EA0B003F2424 /* AppDelegate.swift */,
 				E862AB292615EA0B003F2424 /* SceneDelegate.swift */,
-				E862AB2B2615EA0B003F2424 /* ViewController.swift */,
 				E80393692616F30100DD3570 /* BasicExampleViewController.swift */,
 				E803936B2616F32200DD3570 /* ChatViewController.swift */,
 				E80393752617332700DD3570 /* Utility.swift */,
@@ -246,7 +243,6 @@
 				E80393762617332700DD3570 /* Utility.swift in Sources */,
 				E803937326171AB500DD3570 /* Model.swift in Sources */,
 				E803936E2616F3BF00DD3570 /* MockMessage.swift in Sources */,
-				E862AB2C2615EA0B003F2424 /* ViewController.swift in Sources */,
 				E803937026171A0500DD3570 /* NetworkWorker.swift in Sources */,
 				E862AB282615EA0B003F2424 /* AppDelegate.swift in Sources */,
 				E862AB322615EA0B003F2424 /* MudBot.xcdatamodeld in Sources */,

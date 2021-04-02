@@ -9,7 +9,7 @@
 import UIKit
 import MessageKit
 
-class BasicExampleViewController: ChatViewController {
+class ViewController: ChatViewController {
     override func configureMessageCollectionView() {
         super.configureMessageCollectionView()
         messagesCollectionView.messagesLayoutDelegate = self
@@ -19,7 +19,7 @@ class BasicExampleViewController: ChatViewController {
 
 // MARK: - MessagesDisplayDelegate
 
-extension BasicExampleViewController: MessagesDisplayDelegate {
+extension ViewController: MessagesDisplayDelegate {
         
     func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         return isFromCurrentSender(message: message) ? .white : .darkText
@@ -44,7 +44,7 @@ extension BasicExampleViewController: MessagesDisplayDelegate {
 
 // MARK: - MessagesLayoutDelegate
 
-extension BasicExampleViewController: MessagesLayoutDelegate {
+extension ViewController: MessagesLayoutDelegate {
     
     func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
         return 18

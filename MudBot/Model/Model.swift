@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MessageKit
 
 struct MessageResponse: Codable {
     let success: Int
@@ -18,4 +19,20 @@ struct MessageModel: Codable {
     let chatBotName: String
     let chatBotID: Int
     let message: String
+}
+
+struct Sender: SenderType {
+    var senderId: String
+    
+    var displayName: String
+}
+
+struct Message: MessageType {
+    var sender: SenderType
+    
+    var messageId: String
+    
+    var sentDate: Date
+    
+    var kind: MessageKind
 }
