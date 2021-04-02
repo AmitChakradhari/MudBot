@@ -9,15 +9,24 @@
 import UIKit
 import MessageKit
 import InputBarAccessoryView
+import CoreData
 
 class ChatViewController: MessagesViewController, MessagesDataSource {
     
     // MARK: - Public properties
         
     lazy var messageList: [MessageType] = []
-    let currentUser = Sender(senderId: "1000", displayName: "Amit Chakradhari")
-    var otherUser = Sender(senderId: "63906", displayName: "Cyber Ty")
+    
+    var savedMessages: [SavedMessage] = []
+    
+    let selfId = "10000"
+    let otherUserId = "63906"
+    
+    var currentUser: Sender! = nil
+    var otherUser: Sender! = nil
         
+    var managedObjectContext: NSManagedObjectContext!
+    
     private(set) lazy var refreshControl: UIRefreshControl = {
         let control = UIRefreshControl()
         control.addTarget(self, action: #selector(loadMoreMessages), for: .valueChanged)
@@ -34,14 +43,23 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     
     // MARK: - Lifecycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureMessageCollectionView()
         configureMessageInputBar()
-        loadFirstMessages()
         title = "Chatbot"
         
+        currentUser = Sender(senderId: selfId, displayName: "Amit Chakradhari")
+        otherUser = Sender(senderId: otherUserId, displayName: "Cyber Ty")
+        
+        managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        loadDataFromStore()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,19 +77,6 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
-    }
-    
-    func loadFirstMessages() {
-//        DispatchQueue.global(qos: .userInitiated).async {
-//            let count = 2
-//            SampleData.shared.getMessages(count: count) { messages in
-//                DispatchQueue.main.async {
-//                    self.messageList = messages
-//                    self.messagesCollectionView.reloadData()
-//                    self.messagesCollectionView.scrollToLastItem()
-//                }
-//            }
-//        }
     }
     
     @objc func loadMoreMessages() {
@@ -203,6 +208,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             DispatchQueue.main.async { [weak self] in
                 inputBar.sendButton.stopAnimating()
                 inputBar.inputTextView.placeholder = "Aa"
+                self?.saveMessageToStore(message: messageString, senderId: Int32(self!.selfId) ?? 0)
                 self?.insertMessages(sender: self!.currentUser, messageString: messageString)
                 self?.messagesCollectionView.scrollToLastItem(animated: true)
             }
@@ -210,6 +216,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             NetworkWorker.sendMessage(message: messageString) { messageResponse in
                 guard let messageResponse = messageResponse else { return }
                 DispatchQueue.main.async { [weak self] in
+                    self?.saveMessageToStore(message: messageResponse.message.message, senderId: Int32(self!.otherUserId) ?? 0)
                     self?.insertMessages(sender: self!.otherUser, messageString: messageResponse.message.message)
                     self?.messagesCollectionView.scrollToLastItem(animated: true)
                 }
@@ -223,3 +230,42 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
     }
 }
 
+extension ChatViewController {
+    
+    func loadDataFromStore(){
+        let presentRequest: NSFetchRequest<SavedMessage> = SavedMessage.fetchRequest()
+        do {
+            savedMessages = try  managedObjectContext.fetch(presentRequest)
+            loadSavedMessages(savedMessages: savedMessages)
+            // filter messages based on date and insert them
+        }catch{
+            print("error retriving from core data: \(error.localizedDescription)")
+        }
+    }
+    
+    func saveMessageToStore(message: String, senderId: Int32) {
+        let newMessage = SavedMessage(context: managedObjectContext)
+        newMessage.message = message
+        newMessage.senderId = senderId
+        newMessage.sentDate = Date()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.saveContext()
+    }
+    
+    func loadSavedMessages(savedMessages: [SavedMessage]) {
+        self.messageList = savedMessages.map { savedMessage in
+            let user: Sender = [currentUser, otherUser].filter { user in
+                return user?.senderId == String(savedMessage.senderId)
+            }.first!
+            return Message(sender: user,
+                           messageId: UUID().uuidString,
+                           sentDate: savedMessage.sentDate ?? Date(),
+                           kind: .text(savedMessage.message ?? ""))
+        }
+        self.messagesCollectionView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+            self.messagesCollectionView.scrollToLastItem()
+        })
+    }
+}

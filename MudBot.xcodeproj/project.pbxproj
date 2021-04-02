@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D561A4215BDB20704B73AEA1 /* Pods_MudBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4E90BF5B8B5C315AC3948D /* Pods_MudBot.framework */; };
-		E803936A2616F30100DD3570 /* BasicExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80393692616F30100DD3570 /* BasicExampleViewController.swift */; };
+		E803936A2616F30100DD3570 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80393692616F30100DD3570 /* ViewController.swift */; };
 		E803936C2616F32200DD3570 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803936B2616F32200DD3570 /* ChatViewController.swift */; };
 		E803936E2616F3BF00DD3570 /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803936D2616F3BF00DD3570 /* MockMessage.swift */; };
 		E803937026171A0500DD3570 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803936F26171A0500DD3570 /* NetworkWorker.swift */; };
@@ -26,7 +26,7 @@
 		5F4E90BF5B8B5C315AC3948D /* Pods_MudBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MudBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9AB6B86224B8F088F7A90D /* Pods-MudBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MudBot.release.xcconfig"; path = "Target Support Files/Pods-MudBot/Pods-MudBot.release.xcconfig"; sourceTree = "<group>"; };
 		E134C405017A0F0263E22390 /* Pods-MudBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MudBot.debug.xcconfig"; path = "Target Support Files/Pods-MudBot/Pods-MudBot.debug.xcconfig"; sourceTree = "<group>"; };
-		E80393692616F30100DD3570 /* BasicExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExampleViewController.swift; sourceTree = "<group>"; };
+		E80393692616F30100DD3570 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E803936B2616F32200DD3570 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E803936D2616F3BF00DD3570 /* MockMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessage.swift; sourceTree = "<group>"; };
 		E803936F26171A0500DD3570 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			children = (
 				E862AB272615EA0B003F2424 /* AppDelegate.swift */,
 				E862AB292615EA0B003F2424 /* SceneDelegate.swift */,
-				E80393692616F30100DD3570 /* BasicExampleViewController.swift */,
+				E80393692616F30100DD3570 /* ViewController.swift */,
 				E803936B2616F32200DD3570 /* ChatViewController.swift */,
 				E80393752617332700DD3570 /* Utility.swift */,
 				E803937426171ABE00DD3570 /* Model */,
@@ -248,7 +248,7 @@
 				E862AB322615EA0B003F2424 /* MudBot.xcdatamodeld in Sources */,
 				E862AB2A2615EA0B003F2424 /* SceneDelegate.swift in Sources */,
 				E803936C2616F32200DD3570 /* ChatViewController.swift in Sources */,
-				E803936A2616F30100DD3570 /* BasicExampleViewController.swift in Sources */,
+				E803936A2616F30100DD3570 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
