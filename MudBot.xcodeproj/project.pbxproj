@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D561A4215BDB20704B73AEA1 /* Pods_MudBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4E90BF5B8B5C315AC3948D /* Pods_MudBot.framework */; };
+		E803936A2616F30100DD3570 /* BasicExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80393692616F30100DD3570 /* BasicExampleViewController.swift */; };
+		E803936C2616F32200DD3570 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803936B2616F32200DD3570 /* ChatViewController.swift */; };
+		E803936E2616F3BF00DD3570 /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803936D2616F3BF00DD3570 /* MockMessage.swift */; };
+		E803937026171A0500DD3570 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803936F26171A0500DD3570 /* NetworkWorker.swift */; };
+		E803937326171AB500DD3570 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803937226171AB500DD3570 /* Model.swift */; };
 		E862AB282615EA0B003F2424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862AB272615EA0B003F2424 /* AppDelegate.swift */; };
 		E862AB2A2615EA0B003F2424 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862AB292615EA0B003F2424 /* SceneDelegate.swift */; };
 		E862AB2C2615EA0B003F2424 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862AB2B2615EA0B003F2424 /* ViewController.swift */; };
@@ -17,6 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F4E90BF5B8B5C315AC3948D /* Pods_MudBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MudBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F9AB6B86224B8F088F7A90D /* Pods-MudBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MudBot.release.xcconfig"; path = "Target Support Files/Pods-MudBot/Pods-MudBot.release.xcconfig"; sourceTree = "<group>"; };
+		E134C405017A0F0263E22390 /* Pods-MudBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MudBot.debug.xcconfig"; path = "Target Support Files/Pods-MudBot/Pods-MudBot.debug.xcconfig"; sourceTree = "<group>"; };
+		E80393692616F30100DD3570 /* BasicExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExampleViewController.swift; sourceTree = "<group>"; };
+		E803936B2616F32200DD3570 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		E803936D2616F3BF00DD3570 /* MockMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessage.swift; sourceTree = "<group>"; };
+		E803936F26171A0500DD3570 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
+		E803937226171AB500DD3570 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E862AB242615EA0B003F2424 /* MudBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MudBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E862AB272615EA0B003F2424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E862AB292615EA0B003F2424 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,17 +47,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D561A4215BDB20704B73AEA1 /* Pods_MudBot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43D2915BF80E72DA46AEA262 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E134C405017A0F0263E22390 /* Pods-MudBot.debug.xcconfig */,
+				6F9AB6B86224B8F088F7A90D /* Pods-MudBot.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D6785D7055C5030D9169D666 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F4E90BF5B8B5C315AC3948D /* Pods_MudBot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E803937126171A0C00DD3570 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E803936F26171A0500DD3570 /* NetworkWorker.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E803937426171ABE00DD3570 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E803937226171AB500DD3570 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E862AB1B2615EA0B003F2424 = {
 			isa = PBXGroup;
 			children = (
 				E862AB262615EA0B003F2424 /* MudBot */,
 				E862AB252615EA0B003F2424 /* Products */,
+				43D2915BF80E72DA46AEA262 /* Pods */,
+				D6785D7055C5030D9169D666 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +111,11 @@
 				E862AB272615EA0B003F2424 /* AppDelegate.swift */,
 				E862AB292615EA0B003F2424 /* SceneDelegate.swift */,
 				E862AB2B2615EA0B003F2424 /* ViewController.swift */,
+				E80393692616F30100DD3570 /* BasicExampleViewController.swift */,
+				E803936B2616F32200DD3570 /* ChatViewController.swift */,
+				E803937426171ABE00DD3570 /* Model */,
+				E803937126171A0C00DD3570 /* Networking */,
+				E803936D2616F3BF00DD3570 /* MockMessage.swift */,
 				E862AB2D2615EA0B003F2424 /* Main.storyboard */,
 				E862AB332615EA0E003F2424 /* Assets.xcassets */,
 				E862AB352615EA0E003F2424 /* LaunchScreen.storyboard */,
@@ -77,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E862AB3B2615EA0E003F2424 /* Build configuration list for PBXNativeTarget "MudBot" */;
 			buildPhases = (
+				C2AC3AF904EE421798CDBEF0 /* [CP] Check Pods Manifest.lock */,
 				E862AB202615EA0B003F2424 /* Sources */,
 				E862AB212615EA0B003F2424 /* Frameworks */,
 				E862AB222615EA0B003F2424 /* Resources */,
+				16BC990A743C93B5A8FB53E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,15 +193,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16BC990A743C93B5A8FB53E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MudBot/Pods-MudBot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MudBot/Pods-MudBot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MudBot/Pods-MudBot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2AC3AF904EE421798CDBEF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MudBot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E862AB202615EA0B003F2424 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E803937326171AB500DD3570 /* Model.swift in Sources */,
+				E803936E2616F3BF00DD3570 /* MockMessage.swift in Sources */,
 				E862AB2C2615EA0B003F2424 /* ViewController.swift in Sources */,
+				E803937026171A0500DD3570 /* NetworkWorker.swift in Sources */,
 				E862AB282615EA0B003F2424 /* AppDelegate.swift in Sources */,
 				E862AB322615EA0B003F2424 /* MudBot.xcdatamodeld in Sources */,
 				E862AB2A2615EA0B003F2424 /* SceneDelegate.swift in Sources */,
+				E803936C2616F32200DD3570 /* ChatViewController.swift in Sources */,
+				E803936A2616F30100DD3570 /* BasicExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,11 +390,13 @@
 		};
 		E862AB3C2615EA0E003F2424 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E134C405017A0F0263E22390 /* Pods-MudBot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DKTFTJ4C75;
 				INFOPLIST_FILE = MudBot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +410,13 @@
 		};
 		E862AB3D2615EA0E003F2424 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F9AB6B86224B8F088F7A90D /* Pods-MudBot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DKTFTJ4C75;
 				INFOPLIST_FILE = MudBot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
