@@ -13,6 +13,7 @@
 		E803936E2616F3BF00DD3570 /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803936D2616F3BF00DD3570 /* MockMessage.swift */; };
 		E803937026171A0500DD3570 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803936F26171A0500DD3570 /* NetworkWorker.swift */; };
 		E803937326171AB500DD3570 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803937226171AB500DD3570 /* Model.swift */; };
+		E80393762617332700DD3570 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80393752617332700DD3570 /* Utility.swift */; };
 		E862AB282615EA0B003F2424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862AB272615EA0B003F2424 /* AppDelegate.swift */; };
 		E862AB2A2615EA0B003F2424 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862AB292615EA0B003F2424 /* SceneDelegate.swift */; };
 		E862AB2C2615EA0B003F2424 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862AB2B2615EA0B003F2424 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		E803936D2616F3BF00DD3570 /* MockMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessage.swift; sourceTree = "<group>"; };
 		E803936F26171A0500DD3570 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
 		E803937226171AB500DD3570 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E80393752617332700DD3570 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		E862AB242615EA0B003F2424 /* MudBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MudBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E862AB272615EA0B003F2424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E862AB292615EA0B003F2424 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				E862AB2B2615EA0B003F2424 /* ViewController.swift */,
 				E80393692616F30100DD3570 /* BasicExampleViewController.swift */,
 				E803936B2616F32200DD3570 /* ChatViewController.swift */,
+				E80393752617332700DD3570 /* Utility.swift */,
 				E803937426171ABE00DD3570 /* Model */,
 				E803937126171A0C00DD3570 /* Networking */,
 				E803936D2616F3BF00DD3570 /* MockMessage.swift */,
@@ -240,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80393762617332700DD3570 /* Utility.swift in Sources */,
 				E803937326171AB500DD3570 /* Model.swift in Sources */,
 				E803936E2616F3BF00DD3570 /* MockMessage.swift in Sources */,
 				E862AB2C2615EA0B003F2424 /* ViewController.swift in Sources */,

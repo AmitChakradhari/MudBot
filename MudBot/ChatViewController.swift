@@ -15,8 +15,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     // MARK: - Public properties
         
     lazy var messageList: [MessageType] = []
-    let currentUser = Sender(senderId: "1000", displayName: "Amit C")
-    let otherUser = Sender(senderId: "1001", displayName: "Chatbot Uncle")
+    let currentUser = Sender(senderId: "1000", displayName: "Amit Chakradhari")
+    var otherUser = Sender(senderId: "63906", displayName: "Cyber Ty")
         
     private(set) lazy var refreshControl: UIRefreshControl = {
         let control = UIRefreshControl()
@@ -47,31 +47,6 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let messageArray = [Message(sender: currentUser,
-                                 messageId: "1",
-                                 sentDate: Date().addingTimeInterval(-846000),
-                                 kind: .text("Hi")),
-            Message(sender: otherUser,
-                                    messageId: "2",
-                                    sentDate: Date().addingTimeInterval(-746000),
-                                    kind: .text("Hi wassup")),
-            Message(sender: currentUser,
-            messageId: "3",
-            sentDate: Date().addingTimeInterval(-646000),
-            kind: .text("All good, Isn't the weather nice?")),
-            Message(sender: otherUser,
-            messageId: "4",
-            sentDate: Date().addingTimeInterval(-546000),
-                kind: .text("You're goddamn right!")),
-            Message(sender: currentUser,
-            messageId: "5",
-            sentDate: Date().addingTimeInterval(-446000),
-            kind: .text("You should add Always"))]
-        
-        messageArray.forEach { [weak self] message in
-            self?.insertMessage(message)
-        }
-        
 //        MockSocket.shared.connect(with: [SampleData.shared.nathan, SampleData.shared.wu])
 //            .onNewMessage { [weak self] message in
 //                self?.insertMessage(message)
@@ -87,28 +62,28 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     }
     
     func loadFirstMessages() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            let count = 2
-            SampleData.shared.getMessages(count: count) { messages in
-                DispatchQueue.main.async {
-                    self.messageList = messages
-                    self.messagesCollectionView.reloadData()
-                    self.messagesCollectionView.scrollToLastItem()
-                }
-            }
-        }
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            let count = 2
+//            SampleData.shared.getMessages(count: count) { messages in
+//                DispatchQueue.main.async {
+//                    self.messageList = messages
+//                    self.messagesCollectionView.reloadData()
+//                    self.messagesCollectionView.scrollToLastItem()
+//                }
+//            }
+//        }
     }
     
     @objc func loadMoreMessages() {
-        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 1) {
-            SampleData.shared.getMessages(count: 5) { messages in
-                DispatchQueue.main.async {
-                    self.messageList.insert(contentsOf: messages, at: 0)
-                    self.messagesCollectionView.reloadDataAndKeepOffset()
-                    self.refreshControl.endRefreshing()
-                }
-            }
-        }
+//        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 1) {
+//            SampleData.shared.getMessages(count: 5) { messages in
+//                DispatchQueue.main.async {
+//                    self.messageList.insert(contentsOf: messages, at: 0)
+//                    self.messagesCollectionView.reloadDataAndKeepOffset()
+//                    self.refreshControl.endRefreshing()
+//                }
+//            }
+//        }
     }
     
     func configureMessageCollectionView() {
@@ -245,76 +220,6 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
     private func insertMessages(sender: SenderType, messageString: String) {
         let message = Message(sender: sender, messageId: UUID().uuidString, sentDate: Date(), kind: .text(messageString))
         insertMessage(message)
-    }
-}
-
-
-final internal class SampleData {
-    
-    static let shared = SampleData()
-    
-    private init() {}
-    
-    enum MessageTypes: String, CaseIterable {
-        case Text
-    }
-    
-    let system = MockUser(senderId: "000000", displayName: "System")
-    let nathan = MockUser(senderId: "000001", displayName: "Nathan Tannar")
-    let steven = MockUser(senderId: "000002", displayName: "Steven Deutsch")
-    let wu = MockUser(senderId: "000003", displayName: "Wu Zhong")
-    
-    lazy var senders = [nathan, steven, wu]
-    
-    var currentSender: MockUser {
-        return steven
-    }
-    
-    var now = Date()
-    
-    
-    func dateAddingRandomTime() -> Date {
-        let randomNumber = Int(arc4random_uniform(UInt32(10)))
-        if randomNumber % 2 == 0 {
-            let date = Calendar.current.date(byAdding: .hour, value: randomNumber, to: now)!
-            now = date
-            return date
-        } else {
-            let randomMinute = Int(arc4random_uniform(UInt32(59)))
-            let date = Calendar.current.date(byAdding: .minute, value: randomMinute, to: now)!
-            now = date
-            return date
-        }
-    }
-    
-    func randomMessageType() -> MessageTypes {
-        return MessageTypes.Text
-    }
-    
-    //func getDumm
-    
-    func getMessages(count: Int, completion: ([MessageType]) -> Void) {
-        var messages: [MessageType] = []
-        // Disable Custom Messages
-        UserDefaults.standard.set(false, forKey: "Custom Messages")
-        for _ in 0..<count {
-            let uniqueID = UUID().uuidString
-            let user = senders[0]
-            let date = dateAddingRandomTime()
-            let message = MockMessage(text: "randomSentence", user: user, messageId: uniqueID, date: date)
-            messages.append(message)
-        }
-        completion(messages)
-    }
-    
-    func getAvatarFor(sender: SenderType) -> Avatar {
-        let firstName = sender.displayName.components(separatedBy: " ").first
-        let lastName = sender.displayName.components(separatedBy: " ").last
-        let initials = "\(firstName?.first ?? "A")\(lastName?.first ?? "A")"
-        switch sender.senderId {
-        default:
-            return Avatar(image: nil, initials: initials)
-        }
     }
 }
 
