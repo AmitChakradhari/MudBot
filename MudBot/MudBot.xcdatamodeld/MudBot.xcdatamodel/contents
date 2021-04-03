@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="PendingMessage" representedClassName="PendingMessage" syncable="YES" codeGenerationType="class">
         <attribute name="message" optional="YES" attributeType="String"/>
+        <attribute name="messageId" optional="YES" attributeType="String"/>
         <attribute name="senderId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="SavedMessage" representedClassName="SavedMessage" syncable="YES" codeGenerationType="class">
@@ -10,7 +11,7 @@
         <attribute name="sentDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
+        <element name="PendingMessage" positionX="-54" positionY="18" width="128" height="88"/>
         <element name="SavedMessage" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="PendingMessage" positionX="-54" positionY="18" width="128" height="73"/>
     </elements>
 </model>

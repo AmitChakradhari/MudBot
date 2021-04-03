@@ -20,6 +20,7 @@
 		E862AB322615EA0B003F2424 /* MudBot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E862AB302615EA0B003F2424 /* MudBot.xcdatamodeld */; };
 		E862AB342615EA0E003F2424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E862AB332615EA0E003F2424 /* Assets.xcassets */; };
 		E862AB372615EA0E003F2424 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E862AB352615EA0E003F2424 /* LaunchScreen.storyboard */; };
+		E8D92106261836C200D576ED /* ChatViewControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D92105261836C200D576ED /* ChatViewControllerHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E862AB332615EA0E003F2424 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E862AB362615EA0E003F2424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E862AB382615EA0E003F2424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8D92105261836C200D576ED /* ChatViewControllerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				E862AB292615EA0B003F2424 /* SceneDelegate.swift */,
 				E80393692616F30100DD3570 /* ViewController.swift */,
 				E803936B2616F32200DD3570 /* ChatViewController.swift */,
+				E8D92105261836C200D576ED /* ChatViewControllerHelpers.swift */,
 				E80393752617332700DD3570 /* Utility.swift */,
 				E803937426171ABE00DD3570 /* Model */,
 				E803937126171A0C00DD3570 /* Networking */,
@@ -244,6 +247,7 @@
 				E803937326171AB500DD3570 /* Model.swift in Sources */,
 				E803936E2616F3BF00DD3570 /* MockMessage.swift in Sources */,
 				E803937026171A0500DD3570 /* NetworkWorker.swift in Sources */,
+				E8D92106261836C200D576ED /* ChatViewControllerHelpers.swift in Sources */,
 				E862AB282615EA0B003F2424 /* AppDelegate.swift in Sources */,
 				E862AB322615EA0B003F2424 /* MudBot.xcdatamodeld in Sources */,
 				E862AB2A2615EA0B003F2424 /* SceneDelegate.swift in Sources */,
