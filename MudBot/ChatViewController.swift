@@ -18,6 +18,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     lazy var messageList: [MessageType] = []
     
     var savedMessages: [SavedMessage] = []
+    var pendingMessages: [PendingMessage] = []
     
     let selfId = "10000"
     let otherUserId = "63906"
